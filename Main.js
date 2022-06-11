@@ -12,7 +12,13 @@ Vue.createApp({
             porcentaje:0,
             interes:0,
             resultado: 0,
-            show: false
+            show: false,
+            plazo:[
+                { mes:"Primer mes:", primerMonto:0, segundoMonto:0 },
+                { mes:"Segundo mes:", primerMonto:0, segundoMonto:0 },
+                { mes:"Tercer mes:", primerMonto:0, segundoMonto:0 },
+                { mes:"Cuarto mes:", primerMonto:0, segundoMonto:0 }
+            ]
         }
         
     },
@@ -63,7 +69,5 @@ Vue.createApp({
         calcularPlazo(){
 
         }
-        
-
     }
 }).mount('#app')

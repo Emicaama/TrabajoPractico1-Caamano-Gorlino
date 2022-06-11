@@ -3,18 +3,9 @@ html{
     scroll-behavior: smooth ;
 }
 body{
-    background-image: url("https://blog.kakaocdn.net/dn/zCATh/btq2zdxvrPX/1HMAbym7jyZUvW4sDdIL40/img.png");
+    background-image: url("Assets/6465.jpg");
     background-size:cover;
     width: 100%;
-    margin: 0 0 var(--header-height) 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color)
-}
-.container__datos{
-    padding: 1rem;
-    align-items: center;
 }
 header{
     width: 100%;
@@ -45,11 +36,7 @@ header{
     margin-left: auto;
     margin-right: auto;
 }
-.container {
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 ul{
     list-style: none;
     align-items: center;
@@ -62,47 +49,37 @@ a{
     color: rgb(66, 121, 66);
     box-shadow: 0 0 15 0;
 }
-
-#error {
-    text-align: center;
-    width: 700px;
-    display: block;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #resultados{
     text-align: center;
-    width: 700px;
+    width: 500px;
     display: block;
     align-items: center;
     margin: 1rem 0 0 1rem;
     margin-left: auto;
     margin-right: auto;
 }
-
-#historial {
+#Resultado_plazo {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    border-style: none;
     display: grid;
-    text-align: center;
+    text-align: left;
+    line-height: 50px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
-    width: 1000px;
+    margin-top: 0.5rem;
+    width: 600;
     height: 50px;
-    border: 1px;
 }
 table {
-width: 100%;
-text-align: left;
-background-color: #fff;
+width: 600px;
+text-align: center;
+align-items: center;
 }
 th, td {
     padding: 1rem;
-}
-thead {
-    background-color: rgb(66, 121, 66);
-    color: #fff;
 }
 span{
     color: red;
@@ -113,5 +90,16 @@ span{
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 2px 2px 10px black    
+}
+#titulos_plazo {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    border-style: none;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
 }
 
