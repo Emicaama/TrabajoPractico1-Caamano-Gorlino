@@ -108,4 +108,10 @@ span{
     color: red;
     font-style: bold;
 }
+#resultado_inversion{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black    
+}
 

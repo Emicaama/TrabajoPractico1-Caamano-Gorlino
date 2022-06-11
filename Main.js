@@ -9,6 +9,10 @@ Vue.createApp({
             apellidoCorrecto: true,
             montoCorrecto: true,
             cantDiasCorrecto: true,
+            porcentaje:0,
+            interes:0,
+            resultado: 0,
+            show: false
         }
     },
     methods: {
@@ -20,28 +24,41 @@ Vue.createApp({
             return this.nombre, this.apellido, this.monto, this.cantDias;
         },
         validarInputs(nombre, apellido, monto, cantDias) {
-            
             this.nombreCorrecto=(this.nombre != "")?true:false;
             this.apellidoCorrecto=(this.apellido != "")?true:false;
             this.montoCorrecto=(this.monto >= 1000)?true:false;
             this.cantDiasCorrecto=(this.cantDias >= 30)?true:false;
-            if(this.nombreCorrecto,this.apellidoCorrecto,this.montoCorrecto,this.cantDiasCorrecto){
-                return
+            debugger
+            if(!this.nombreCorrecto || !this.apellidoCorrecto || !this.montoCorrecto || !this.cantDiasCorrecto){ 
+                return this.show= false;
+            }
+            else{
+                return this.show= true;
             }
         },
         calcularPorcentaje(cantDias) {
-            var porcentaje = 0;
-            if(cantDias >= 30 && cantDias <= 60){ porcentaje = 40}
-            if(cantDias >= 61 && cantDias <= 120){ porcentaje = 45}
-            if(cantDias >= 121 && cantDias <= 360){porcentaje = 50}
-            if(cantDias >360){porcentaje = 65}
-            return porcentaje;
+            if(this.cantDias >= 30 && this.cantDias <= 60){ this.porcentaje = 40}
+            if(this.cantDias >= 61 && this.cantDias <= 120){ this.porcentaje = 45}
+            if(this.cantDias >= 121 && this.cantDias <= 360){ this.porcentaje = 50}
+            if(this.cantDias > 360){ this.porcentaje = 65}
+            
+            return this.porcentaje;
         },
         calcularInteres(monto, cantDias, porcentaje){
-            let interes = 0;
-            interes = (monto*(dias/360)*(porcentaje/100));
-            resultado = monto + interes;
-            return interes;
+            this.interes = (this.monto*(this.cantDias/360)*(this.porcentaje/100));
+            return this.interes;
+        },
+        calcularResultado(monto,interes){
+            this.resultado = this.monto + this.interes;
+            return this.resultado;
+        },
+        borrarDatos(nombre, apellido, monto, cantDias){
+            this.nombre = "";
+            this.apellido = "";
+            this.monto = 0;
+            this.cantDias = 0; 
+            this.show = false;
         }
+
     }
 }).mount('#app')

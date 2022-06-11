@@ -26,17 +26,17 @@
             </li>
             <li>
               <label>Apellido:</label>
-              <input class="container" type="text" id="txtApellido">
+              <input class="container" type="text" id="txtApellido" v-model="apellido">
               <span v-if="!this.apellidoCorrecto">*Por favor ingrese un apellido válido*</span>
             </li>
             <li>
               <label>Monto a invertir: $</label>
-              <input class="container" type="number" id="monto">
+              <input class="container" type="number" id="monto" v-model="monto">
               <span v-if="!this.montoCorrecto">*Por favor ingrese un monto mayor a 1000*</span>
             </li>
             <li>
               <label>Cantidad de días a invertir:</label>
-              <input class="container" type="number" id="cantDias">
+              <input class="container" type="number" id="cantDias" v-model="cantDias">
               <span v-if="!this.cantDiasCorrecto">*Por favor ingrese una cantidad de dias mayor a 30*</span>
             </li>
           </ul>
@@ -49,8 +49,15 @@
           v-on:Click=
           "cargarInputs(nombre,apellido,monto,cantDias),
           validarInputs(nombre,apellido,monto,cantDias),
-          calcularPorcentaje(cantDias)">
+          calcularPorcentaje(cantDias),
+          calcularInteres(monto, cantDias, porcentaje),
+          calcularResultado(monto, interes)">
           Calcular
+          </button>
+          <button class="button" 
+          v-on:Click=
+          "borrarDatos(nombre,apellido,monto,cantDias)">
+          Borrar datos
           </button>
           
         </div>
@@ -59,8 +66,13 @@
     <div id="error"></div>
     <!-- Resultado inversion simple -->
     <div id="resultados">
-    <!-- Resultado re inversion -->
+      <div id="resultado_inversion" v-if="this.show">
+        <h5>
+          "El total a obtener de <b> {{nombre}} {{apellido}}</b> es de <b> $ {{resultado.toFixed(2)}}</b>
+        </h5>
+      </div>
     </div>
+    <!-- Resultado re inversion -->
     <div id="historial" >
         <table border="1">
           <thead>
