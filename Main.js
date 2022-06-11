@@ -13,7 +13,8 @@ Vue.createApp({
             interes:0,
             resultado: 0,
             show: false
-        }
+        },
+        
     },
     methods: {
         cargarInputs(nombre, apellido, monto, cantDias) {
