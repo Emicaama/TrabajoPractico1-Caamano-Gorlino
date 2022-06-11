@@ -13,7 +13,7 @@ Vue.createApp({
             interes:0,
             resultado: 0,
             show: false
-        },
+        }
         
     },
     methods: {
@@ -59,7 +59,11 @@ Vue.createApp({
             this.monto = 0;
             this.cantDias = 0; 
             this.show = false;
+        },
+        calcularPlazo(){
+
         }
+        
 
     }
 }).mount('#app')
