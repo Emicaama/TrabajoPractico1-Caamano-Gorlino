@@ -45,7 +45,13 @@
             <button type="button" class="btn btn-dark" id="btnVolverCalcular">Reinvertir Capital</button>
             <button type="button" class="btn btn-dark" id="btnBorrar">Borrar datos</button>
           </div> -->
-          <button class="button" v-on:Click="cargarInputs(nombre,apellido,monto,cantDias),validarInputs(nombre,apellido,monto,cantDias),calcularPorcentaje(cantDias)"> Calcular</button>
+          <button class="button" 
+          v-on:Click=
+          "cargarInputs(nombre,apellido,monto,cantDias),
+          validarInputs(nombre,apellido,monto,cantDias),
+          calcularPorcentaje(cantDias)">
+          Calcular
+          </button>
           
         </div>
     </div>

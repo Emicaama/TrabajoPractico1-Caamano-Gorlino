@@ -30,12 +30,18 @@ Vue.createApp({
             }
         },
         calcularPorcentaje(cantDias) {
-            debugger;
             var porcentaje = 0;
             if(cantDias >= 30 && cantDias <= 60){ porcentaje = 40}
             if(cantDias >= 61 && cantDias <= 120){ porcentaje = 45}
             if(cantDias >= 121 && cantDias <= 360){porcentaje = 50}
             if(cantDias >360){porcentaje = 65}
+            return porcentaje;
+        },
+        calcularInteres(monto, cantDias, porcentaje){
+            let interes = 0;
+            interes = (monto*(dias/360)*(porcentaje/100));
+            resultado = monto + interes;
+            return interes;
         }
     }
 }).mount('#app')
